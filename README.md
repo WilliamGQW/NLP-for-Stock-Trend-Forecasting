@@ -12,18 +12,27 @@ drive.mount('/content/drive')
 ## Directory Tree:
 ```
 .
-├── Group15_NLP_Stock_Forecasting_with_oecd.ipynb           # Our project's step-by-step process with OECD indicators
-├── Group15_NLP_Stock_Forecasting_without_oecd.ipynb        # Our project's step-by-step process without OECD indicators
+├── Group15_NLP_Stock_Forecasting_with_oecd.ipynb               # Our project's step-by-step process with OECD indicators
+├── Group15_NLP_Stock_Forecasting_without_oecd.ipynb            # Our project's step-by-step process without OECD indicators
+├── us_financial_news_articles_2018.csv                         # News data, saved in Cloud Drive dut to its large size 821.6 MB
+├── us_financial_news_articles_2018_with_sentiment.csv          # News data with sentiment scores, saved in Cloud Drive dut to its large size 827.5 MB
 ├── LICENSE
-├── OECD_data_processing.ipynb                              # Data pre-processing
 ├── README.md
-└── data                                                    # Data directory
-    ├── SP500.csv                                           # SP500 Index
-    ├── oecd_data                                           # OECD indicators
-    │   ├── BCI.csv
-    │   ├── CCI.csv
-    │   └── CLI.csv
-    ├── source_price.csv                                    # Aggregated stock data with News sentiment scores
-    ├── source_price_sentiment_oecd.csv                     # Aggregated stock data with News sentiment scores and OECD indicators
-    └── stockdata
+├── data                                                        # Data directory
+│   ├── SP500.csv                                               # SP500 Index
+│   ├── large_data
+│   │   ├── us_financial_news_articles_2018.csv                 # News data, large size 821.6 MB, saved in Cloud Drive
+│   │   ├── us_financial_news_articles_2018_with_sentiment.csv  # News data with sentiment scores, large size 827.5 MB, saved in Cloud Drive
+│   ├── oecd_data                                               # OECD indicators
+│   │   ├── BCI.csv
+│   │   ├── CCI.csv
+│   │   └── CLI.csv
+│   ├── source_price.csv                                        # Aggregated stock data with News sentiment scores
+│   ├── source_price_sentiment_oecd.csv                         # Aggregated stock data with News sentiment scores and OECD indicators
+│   └── stockdata
+└── data_preprocessing
+    ├── 1_news_data_loading.ipynb                               # News data loading
+    ├── 2_feature_extraction.ipynb                              # Sentiment feature extraction
+    ├── 3_data_processing.ipynb                                 # Sentiment aggregation
+    └── 4_OECD_data_aggregation.ipynb                           # OECD aggregation
 ```
