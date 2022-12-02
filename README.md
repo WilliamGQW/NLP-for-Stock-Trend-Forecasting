@@ -36,3 +36,10 @@ drive.mount('/content/drive')
     ├── 3_data_processing.ipynb                                 # Sentiment aggregation
     └── 4_OECD_data_aggregation.ipynb                           # OECD aggregation
 ```
+
+## References
+<a id="1">[1]</a > 
+Xinyi L., Yinchuan L., Hongyang Y., Liuqing Y., Xiaoyang L. 2019. DP-LSTM: Dif- ferential Privacy-inspired LSTM for Stock Prediction Using Financial News. ArXiv, abs/1912.10806
+
+<a id="2">[2]</a > 
+Yang L., Yi P. 2022. A novel ensemble deep learning model for stock prediction based on stock prices and news. International Journal of Data Science and Analytics, 13(2), 139-149
