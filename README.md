@@ -1,7 +1,44 @@
-# CSCI544 Group 15 - NLP for Stock Trend Forecasting
+# NLP for Stock Trend Forecasting
+
+## Project Summary
+An ensemble **RNN-LSTM-GRU** model integrating **attention** to forecast stock price with financial news headline from Reuters and other websites.
+
+## Data Collection and Data Pre-processing
+We used an existing dataset including financial news and stock prices in days, and added OECD economic indicators to the datasets to expect a better performance. 
+
+<img width="479" alt="image" src="https://user-images.githubusercontent.com/18302400/215399484-aa537bb9-5789-425d-958d-144f783be924.png">
+
+## Split Time-Series Data
+
+Since we deal with time series forecasting, we use the financial news and stock prices of the past 10 days as a rolling window to predict the price of the next trading day, and we split dataset into training/validation/test datasets.
+
+<img width="477" alt="image" src="https://user-images.githubusercontent.com/18302400/215399623-2d768057-1a8e-4f33-9f38-ac57021d3bb0.png">
+
+## Ensemble Learning
+
+- **Why?** Each base model has its pros and cons, we aspire to fuse all the decisions to further improve prediction results.
+- **How?** We choose Blending as our ensemble learning method since it reduces generalization error reduction. After we obtain the predictions of the validation data for all four base models, we combine them into a new training dataset. This new dataset will be passed to the second level to train the meta-learner.
+
+<img width="809" alt="image" src="https://user-images.githubusercontent.com/18302400/215400679-7103d5d3-0bb4-4f0a-96a8-aa24c4439f29.png">
+
+
+## Evaluation and Result
+<img width="460" alt="image" src="https://user-images.githubusercontent.com/18302400/215400880-b92c6dbe-ae71-4ebf-82eb-729273cafe35.png">
+
+## Result and Conclusion
+- The 4-model Ensemble model outperforms all four base models.
+- The 4-model Ensemble model also has better precision score than the 2-model Ensemble model does.
+- Decreased MSE by 12% compared to recent papers by leveraging sentiment and OECD economic indicators.
+
+<img width="476" alt="image" src="https://user-images.githubusercontent.com/18302400/215400932-dddf47e5-7c16-45a9-a7f7-72c6b1bb5857.png">
+
+## Future Research
+- implement a reinforcement learning model as the second-level model
+- change the historical windows dynamically based on the type of news
+- increase the size of training dataset by integrating data from other sources
 
 ## Notes
-Our project is developed and ran on Google CoLab. Thus, to run this project successfully, make sure to specify the correct path to your drive before running our code. To be more specific, after clone/download our source code to CoLab, modify and run the following code as the first cell of each notebooks:
+This project was developed and ran on Google CoLab. Thus, to run this project successfully, make sure to specify the correct path to your drive before running our code. To be more specific, after clone/download our source code to CoLab, modify and run the following code as the first cell of each notebooks:
 
 ```
 from google.colab import drive
@@ -36,6 +73,7 @@ drive.mount('/content/drive')
     ├── 3_data_processing.ipynb                                 # Sentiment aggregation
     └── 4_OECD_data_aggregation.ipynb                           # OECD aggregation
 ```
+
 
 ## References
 <a id="1">[1]</a > 
